@@ -46,7 +46,7 @@ namespace DatingApp.API
             }
 
             // app.UseHttpsRedirection();
-            app.useCors(x=>x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            app.UseCors(x=>x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseMvc();
         }
     }
