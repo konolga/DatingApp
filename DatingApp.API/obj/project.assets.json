@@ -12260,7 +12260,7 @@
       ]
     },
     "System.Xml.XmlSerializer/4.3.0": {
-      "sha512": "VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
+      "sha512": "MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "type": "package",
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
@@ -12416,28 +12416,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/olga/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\olgasi\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/olga/Documents/GitHub/DatingApp/DatingApp.API/DatingApp.API.csproj",
+      "projectUniqueName": "C:\\Users\\olgasi\\OneDrive\\GitProjects\\DatingApp\\datingapp.api\\DatingApp.API.csproj",
       "projectName": "DatingApp.API",
-      "projectPath": "/Users/olga/Documents/GitHub/DatingApp/DatingApp.API/DatingApp.API.csproj",
-      "packagesPath": "/Users/olga/.nuget/packages/",
-      "outputPath": "/Users/olga/Documents/GitHub/DatingApp/DatingApp.API/obj/",
+      "projectPath": "C:\\Users\\olgasi\\OneDrive\\GitProjects\\DatingApp\\datingapp.api\\DatingApp.API.csproj",
+      "packagesPath": "C:\\Users\\olgasi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\olgasi\\OneDrive\\GitProjects\\DatingApp\\datingapp.api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/olga/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\olgasi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/olga/Documents/GitHub/DatingApp/DatingApp.API/DatingApp.API.csproj": {}
+    "C:\\Users\\olgasi\\OneDrive\\GitProjects\\DatingApp\\datingapp.api\\DatingApp.API.csproj": {}
   },
   "projects": {
-    "/Users/olga/Documents/GitHub/DatingApp/DatingApp.API/DatingApp.API.csproj": {
+    "C:\\Users\\olgasi\\OneDrive\\GitProjects\\DatingApp\\datingapp.api\\DatingApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olga/Documents/GitHub/DatingApp/DatingApp.API/DatingApp.API.csproj",
+        "projectUniqueName": "C:\\Users\\olgasi\\OneDrive\\GitProjects\\DatingApp\\datingapp.api\\DatingApp.API.csproj",
         "projectName": "DatingApp.API",
-        "projectPath": "/Users/olga/Documents/GitHub/DatingApp/DatingApp.API/DatingApp.API.csproj",
-        "packagesPath": "/Users/olga/.nuget/packages/",
-        "outputPath": "/Users/olga/Documents/GitHub/DatingApp/DatingApp.API/obj/",
+        "projectPath": "C:\\Users\\olgasi\\OneDrive\\GitProjects\\DatingApp\\datingapp.api\\DatingApp.API.csproj",
+        "packagesPath": "C:\\Users\\olgasi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\olgasi\\OneDrive\\GitProjects\\DatingApp\\datingapp.api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/olga/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\olgasi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
