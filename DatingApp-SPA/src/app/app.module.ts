@@ -70,9 +70,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       })
    ],
    providers: [
-
       ErrorInterceptorProvider,
-
       MemberDetailsResolver,
       MemberListResolver,
       {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
