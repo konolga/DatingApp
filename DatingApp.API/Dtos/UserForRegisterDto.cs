@@ -1,4 +1,4 @@
-//DTO = data transfer objects
+//DTO = data transfer objects defines how the data will be sent over the network
 
 using System.ComponentModel.DataAnnotations;
 

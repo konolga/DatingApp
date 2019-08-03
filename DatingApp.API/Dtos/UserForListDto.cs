@@ -1,3 +1,4 @@
+//DTO = data transfer objects defines how the data will be sent over the network
 using System;
 
 namespace DatingApp.API.Dtos
