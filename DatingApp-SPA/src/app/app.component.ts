@@ -9,7 +9,7 @@ import { AuthService } from './_services/auth.service';
 })
 export class AppComponent {
   jwtHelper = new JwtHelperService();
-  
+
   constructor (private authService: AuthService){}
 
 
