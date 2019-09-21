@@ -31,6 +31,7 @@ import { AlertifyService} from './_services/alertify.service';
 import { MemberDetailsResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { PhotoEditComponent } from './members/photo-edit/photo-edit.component';
 
 
 
@@ -63,7 +64,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
-      MemberEditComponent
+      MemberEditComponent,
+      PhotoEditComponent
    ],
    imports: [
       BrowserModule,
