@@ -43,7 +43,7 @@
                 <tab heading="Edit profile">
                   <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()">
                     <h4>Description</h4>
-                    <textarea class="form-control" name="intoduction" rows="10" [(ngModel)]="user.introduction"></textarea>
+                    <textarea class="form-control" name="introduction" rows="10" [(ngModel)]="user.introduction"></textarea>
                     <h4>Looking for</h4>
                     <textarea class="form-control" name="lookingFor" rows="10" [(ngModel)]="user.lookingFor"></textarea>
                     <h4>Interests</h4>

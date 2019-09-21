@@ -16,6 +16,8 @@ namespace DatingApp.API.Helpers
                 .ForMember(dest => dest.Age, opt => {
                 opt.MapFrom(d => d.DateOfBirth.CalculateAge());
                 });
+
+
             CreateMap<User, UserForDetailedDto>()
                 .ForMember(dest => dest.PhotoUrl, opt => {
                 opt.MapFrom (src => src.Photos.FirstOrDefault (p=> p.IsMain).Url);
@@ -23,7 +25,12 @@ namespace DatingApp.API.Helpers
                 .ForMember(dest => dest.Age, opt => {
                 opt.MapFrom(d => d.DateOfBirth.CalculateAge());
                 });
+
+
             CreateMap<Photo, PhotoForDetailedDto>();
+
+            CreateMap<UserForUpdateDto, User>();
+
         }
     }
 }
