@@ -3,7 +3,10 @@
   <div class="" *ngFor="let photo of photos">
     <img src="{{photo.url}}" class="img-thumbnail p-1">
     <div class="text-center ">
-      <button class="btn btn-sm btn-info" type="button">Main</button>
+      <button class="btn btn-sm mr-2" type="button"
+      (click)="setMainPhoto(photo)"
+      [ngClass]="photo.isMain ? 'btn-secondary active' : 'btn-success'"
+      [disabled]="photo.isMain">Main</button>
       <button class="btn btn-sm btn-danger" type="button"><i class="fa fa-trash-o"></i></button>
     </div>
   </div>
@@ -11,12 +14,8 @@
 
 
 
-<div class="row mt-3">
-
-  <div class="col-md-3">
-
+<div class="col-md-12">
       <h3>Add photos</h3>
-
       <div ng2FileDrop
            [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
            (fileOver)="fileOverBase($event)"
@@ -25,19 +24,13 @@
            <i class="fa fa-upload fa-3x"></i>
           Drop photos here
       </div>
+      <div>or
+        <input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/>
+      </div>
+</div>
 
-      Multiple
-      <input type="file" ng2FileSelect [uploader]="uploader" multiple  /><br/>
-
-      Single
-      <input type="file" ng2FileSelect [uploader]="uploader" />
-  </div>
-
-  <div class="col-md-6" style="margin-bottom: 40px">
-
-      <h3>Upload queue</h3>
+  <div class="col-md-12" style="margin-top: 40px">
       <p>Queue length: {{ uploader?.queue?.length }}</p>
-
       <table class="table">
           <thead>
           <tr>
@@ -65,15 +58,15 @@
               <td nowrap>
                   <button type="button" class="btn btn-success btn-xs"
                           (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
-                      <span class="glyphicon glyphicon-upload"></span> Upload
+                      <span class="fa fa-upload"></span>
                   </button>
                   <button type="button" class="btn btn-warning btn-xs"
                           (click)="item.cancel()" [disabled]="!item.isUploading">
-                      <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                      <span class="fa fa-ban"></span>
                   </button>
                   <button type="button" class="btn btn-danger btn-xs"
                           (click)="item.remove()">
-                      <span class="glyphicon glyphicon-trash"></span> Remove
+                      <span class="fa fa-trash"></span>
                   </button>
               </td>
           </tr>
@@ -101,7 +94,7 @@
           </button>
       </div>
 
-  </div>
 
-</div>
+
+
 

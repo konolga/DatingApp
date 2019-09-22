@@ -13,3 +13,7 @@ border: dotter 3px red;
 input[type=file]{
   color: transparent;
 }
+
+.progress{
+  margin: 10px;
+}
