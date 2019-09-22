@@ -6,3 +6,10 @@ img.img-thumbnail {
 .row {
   margin: 4px;
 }
+.nv-file-over {
+border: dotter 3px red;
+}
+
+input[type=file]{
+  color: transparent;
+}
