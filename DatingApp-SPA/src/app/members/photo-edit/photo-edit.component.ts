@@ -35,7 +35,7 @@ export class PhotoEditComponent implements OnInit {
         allowedFileType: ['image'],
         removeAfterUpload: true,
         autoUpload: false,
-        maxFileSize: 10 * 1024 * 1024
+        maxFileSize: 10 * 1024 * 1024 //The default maximum file size is 10MB
     });
     this.uploader.onAfterAddingFile = (file) => {file.withCredentials = false; };
     this.uploader.onSuccessItem = (item, response, status, headers) => {
@@ -58,8 +58,9 @@ export class PhotoEditComponent implements OnInit {
       this.currentMain = this.photos.filter(p => p.isMain === true)[0];
       this.currentMain.isMain = false;
       photo.isMain = true;
-      this.getMemberPhotoChange.emit(photo.url);
-      console.log('Successfully set to main');
+      this.authService.changeMemberPhoto(photo.url);
+      this.authService.currentUser.photoUrl = photo.url;
+      localStorage.setItem('user', JSON.stringify(this.authService.currentUser));
     }, error => {
       this.alertify.error(error);
     });
