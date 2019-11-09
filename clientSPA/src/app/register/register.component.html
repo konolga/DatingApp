@@ -1,0 +1,58 @@
+<!-- register page html -->
+
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+
+    <h2 class="text-center text-primary">Sign Up</h2>
+
+    <hr>
+    <div class="form-group">
+      <input type="email" class="form-control" name="email" placeholder="Email" #email="ngModel"
+      [(ngModel)]="user.email" 
+      required
+      email>
+      <div *ngIf="email.invalid && email.dirty" class="alert alert-danger">
+      Email is required and format should be <i>john@doe.com</i></div>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="name" placeholder="Name" #name="ngModel"
+    [(ngModel)]="user.name" 
+    required
+    pattern='^[a-zA-Z\s]*$'>
+    <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">
+    Name is required and should be letters only</div>
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control" name="lastName" placeholder="Last Name" #lastName="ngModel"
+    [(ngModel)]="user.lastName" 
+    required
+    pattern='^[a-zA-Z\s]*$'>
+    <div *ngIf="lastName.invalid && lastName.dirty" class="alert alert-danger">
+    Last Name is required and should be letters only</div>
+</div>
+
+<div class="form-group">
+  <input type="password" class="form-control" name="password" [ngModel]="user.password"
+    required #password="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password">
+  <div *ngIf="password.dirty" class="alert alert-danger">
+    Password is required. </div>
+  <div *ngIf="password.invalid && password.dirty" class="alert alert-danger">
+    Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
+</div>
+
+<div class="form-group">
+  <input type="password" class="form-control" name="confirmPassword" [ngModel]="user.confirmPassword"
+    required #confirmPassword="ngModel" pattern="{{password.value}}" placeholder="Confirm password">
+  <div *ngIf="confirmPassword.dirty" class="alert alert-danger">
+    Confirm password is required. </div>
+  <div *ngIf="confirmPassword.invalid && confirmPassword.dirty" class="alert alert-danger">
+    Password & Confirm Password do not match.</div>
+</div> 
+
+    <div class="form-group text-center">
+      <button class="btn btn-success" type="submit">Register</button>
+      <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+
