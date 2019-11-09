@@ -3,27 +3,27 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
-using DatingApp.API.Data;
-using DatingApp.API.Helpers;
+using webAPI.Data;
+using webAPI.Helpers;
 using CloudinaryDotNet;
 using System.Threading.Tasks;
-using DatingApp.API.Dtos;
+using webAPI.Dtos;
 using System.Security.Claims;
 using CloudinaryDotNet.Actions;
-using DatingApp.API.Models;
+using webAPI.Models;
 
-namespace DatingApp.API.Controllers
+namespace webAPI.Controllers
 {
     [Authorize]
     [Route("api/users/{userId}/photos")]
     [ApiController]
     public class PhotosController : ControllerBase
     {
-        private readonly IDatingRepository _repo;
+        private readonly IUserRepository _repo;
         private readonly IMapper _mapper;
         private readonly IOptions<CloudinarySettings> _cloudinaryConfig;
         Cloudinary _cloudinary;
-       public PhotosController(IDatingRepository repo, IMapper mapper, IOptions<CloudinarySettings> cloudinaryConfig)
+       public PhotosController(IUserRepository repo, IMapper mapper, IOptions<CloudinarySettings> cloudinaryConfig)
        {
                 _repo = repo;
                 _mapper = mapper;

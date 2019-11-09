@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Http;
 
-namespace DatingApp.API.Controllers
+namespace webAPI.Controllers
 {
     internal class PhotoForReturnDto
     {

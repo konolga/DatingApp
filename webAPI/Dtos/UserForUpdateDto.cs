@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DatingApp.API.Dtos
+namespace webAPI.Dtos
 {
     public class UserForUpdateDto
     {

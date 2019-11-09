@@ -6,9 +6,9 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using DatingApp.API.Data;
-using DatingApp.API.Dtos;
-using DatingApp.API.Models;
+using webAPI.Data;
+using webAPI.Dtos;
+using webAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +16,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DatingApp.API.Controllers
+namespace webAPI.Controllers
 {  
     [Route("api/[controller]")]
     [ApiController]
@@ -40,13 +40,13 @@ namespace DatingApp.API.Controllers
             //if(!ModelState.IsValid)
             //   return BadRequest(ModelState); - we don't need that because we use [ApiController]
 
-            userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
-            if (await _repo.UserExists(userForRegisterDto.Username))
-                return BadRequest ("Username already exist");
+            userForRegisterDto.Email = userForRegisterDto.Email.ToLower();
+            if (await _repo.UserExists(userForRegisterDto.Email))
+                return BadRequest ("Email already exist");
 
             var userToCreate = new User
             {
-                Username = userForRegisterDto.Username
+                Email = userForRegisterDto.Email
             };
 
             var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
@@ -60,14 +60,14 @@ namespace DatingApp.API.Controllers
          {
 
          
-            var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
+            var userFromRepo = await _repo.Login(userForLoginDto.Email.ToLower(), userForLoginDto.Password);
             if(userFromRepo == null)
                 return Unauthorized();
 
             var claims = new[]
             {
                 new Claim (ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
-                new Claim (ClaimTypes.Name, userFromRepo.Username)
+                new Claim (ClaimTypes.Email, userFromRepo.Email)
             };
             var key = new SymmetricSecurityKey (Encoding.UTF8
                 .GetBytes(_config.GetSection("AppSettings:Token").Value));

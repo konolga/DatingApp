@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DatingApp.API.Models;
+using webAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatingApp.API.Data
+namespace webAPI.Data
 {
-    public class DatingRepository : IDatingRepository
+    public class UserRepository : IUserRepository
     {
         private readonly DataContext _context;
-        public DatingRepository(DataContext context)
+        public UserRepository(DataContext context)
         {
              _context = context;
         }

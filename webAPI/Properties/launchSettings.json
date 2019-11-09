@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "DatingApp.API": {
+    "webAPI": {
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "api/values",

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DatingApp.API.Migrations
+namespace webAPI.Migrations
 {
-    public partial class UsersTable : Migration
+    public partial class mySecondMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

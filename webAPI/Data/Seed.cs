@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using DatingApp.API.Models;
+using webAPI.Models;
 using Newtonsoft.Json;
 
-namespace DatingApp.API.Data
+namespace webAPI.Data
 {
     public class Seed
     {
@@ -21,10 +21,12 @@ namespace DatingApp.API.Data
             {
                
                 byte[] passwordHash, passwordSalt;
-                CreatePasswordHash("password", out passwordHash, out passwordSalt);
+                CreatePasswordHash("Password1", out passwordHash, out passwordSalt);
                 user.PasswordHash = passwordHash;
                 user.PasswordSalt = passwordSalt;
-                user.Username = user.Username.ToLower();
+                user.Email = user.Email.ToLower();
+                user.Name = user.Name.ToLower();
+                user.LastName = user.LastName.ToLower();
                 _context.Users.Add(user);
             }
             _context.SaveChanges();
