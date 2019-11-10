@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -35,23 +34,18 @@ namespace webAPI.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register (UserForRegisterDto userForRegisterDto)
         {
-            //validate request
-
-            //if(!ModelState.IsValid)
-            //   return BadRequest(ModelState); - we don't need that because we use [ApiController]
-
             userForRegisterDto.Email = userForRegisterDto.Email.ToLower();
             if (await _repo.UserExists(userForRegisterDto.Email))
                 return BadRequest ("Email already exist");
 
             var userToCreate = new User
             {
-                Email = userForRegisterDto.Email
+                Email = userForRegisterDto.Email,
+                Name = userForRegisterDto.Name,
+                LastName = userForRegisterDto.LastName
             };
 
             var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
-
-           // return CreatedAtRoute()
            return StatusCode(201);
         }
 

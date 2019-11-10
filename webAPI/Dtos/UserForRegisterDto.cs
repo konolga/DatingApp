@@ -19,7 +19,7 @@ namespace webAPI.Dtos
         public string LastName { get; set; }
 
         [Required]
-        [RegularExpression(@"(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", ErrorMessage = "Invalid password")]
+        [RegularExpression(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$", ErrorMessage = "Invalid password")]
         [StringLength(8, MinimumLength=4, ErrorMessage="Password must be between 4 and 8 characters")]
         public string Password { get; set; }
     }

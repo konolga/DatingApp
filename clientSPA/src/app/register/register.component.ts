@@ -11,26 +11,27 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 @Output() cancelRegister = new EventEmitter();
-user: User;
+user: User= {
+  id: null,
+  email: '',
+  name: '',
+  lastName: '',
+  password: '',
+  confirmPassword: ''
+};
 
   constructor(private authService: AuthService, private alertify: AlertifyService) { }
 
   ngOnInit() {
-    this.user = {
-      id: null,
-      email: '',
-      name: '',
-      lastName: '',
-      password: '',
-      confirmPassword: ''
-    };
+
   }
 
   register() {
     this.authService.register(this.user).subscribe(() =>{
+      console.log(this.user)
       this.alertify.success('registration successful');
     }, error => {
-      console.log(error)
+      console.log(error.error)
       this.alertify.error(error);
     });
   }
