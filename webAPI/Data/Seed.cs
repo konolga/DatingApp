@@ -13,7 +13,7 @@ namespace webAPI.Data
             _context = context;
         }
 
-        public void SeedUsers()
+        public void SeedUsers(DataContext context)
         {
             var userData = System.IO.File.ReadAllText("Data/UserSeedData.json");
             var users = JsonConvert.DeserializeObject<List<User>>(userData);

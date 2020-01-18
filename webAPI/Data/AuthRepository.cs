@@ -45,7 +45,6 @@ namespace webAPI.Data
         {
             byte [] passwordHash, passwordSalt;
             CreatePasswordHash (password, out passwordHash, out passwordSalt);
-
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
